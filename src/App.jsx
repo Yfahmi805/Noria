@@ -17,7 +17,7 @@ function App() {
   return (
     <CartProvider>
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename="/Noria">
           <Popup />
           <Routes>
             <Route index element={<Home />} />
