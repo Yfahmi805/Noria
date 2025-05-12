@@ -20,6 +20,7 @@ function App() {
         <BrowserRouter>
           <Popup />
           <Routes>
+            <Route index element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />
