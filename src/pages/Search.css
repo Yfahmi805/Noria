@@ -1,0 +1,148 @@
+.search-page {
+    padding: 20px 10px;
+    background-color: #fff;
+}
+
+.search-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0px;
+    background-color: #fff;
+    
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 300px;
+}
+
+.search-icon {
+    font-size: 18px;
+    color: #888;
+    margin-right: 5px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-button,
+.sort-button {
+    background-color: var(--color-olive);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter-button:hover,
+.sort-button:hover {
+    background-color: #4b5a4d;
+}
+
+.popup {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+}
+
+.closePopup {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.closePopup button {
+    padding: 5px 10px;
+    cursor: pointer;
+
+    background: #fff;
+    border: none;
+    outline: none;
+}
+
+.popup ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.popup li {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup li:hover {
+    background-color: #f0f0f0;
+}
+
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+}
+@media (max-width:900px){
+    .search-page{
+        padding-bottom:0;
+    }
+}
+@media (max-width: 900px) {
+    .search-bar-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-bar {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .search-bar input{
+        padding: 10px 0;
+    }
+
+
+}
