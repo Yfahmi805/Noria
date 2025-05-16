@@ -1,0 +1,63 @@
+.vendor-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.vendor-detail-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--color-olive);
+}
+
+.vendor-detail-info {
+    flex: 1;
+}
+
+.vendor-detail-location {
+    font-size: var(--text-sm);
+    color: var(--color-brown);
+    margin-bottom: 0.25rem;
+}
+
+.vendor-detail-rating {
+    font-size: var(--text-sm);
+    color: var(--color-terracotta);
+    margin-bottom: 0.5rem;
+}
+
+.vendor-detail-description {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.vendor-products-title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-olive);
+    font-size: var(--text-xl);
+    font-weight: 600;
+}
+
+
+
+.masonry-item {
+    background: var(--color-beige);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.masonry-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: var(--shadow-md);
+}
+

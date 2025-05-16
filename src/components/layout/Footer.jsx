@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
               <li>
                 <FiMail className="contact-icon" />
-                <p>contact@soukelnaturel.com</p>
+                <p>contact@Noria.com</p>
               </li>
               <li>
                 <FiPhone className="contact-icon" />

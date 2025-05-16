@@ -12,6 +12,9 @@ import CategoryDetail from './pages/CategoryDetail';
 import Search from './pages/Search';
 import BottomNavbar from './components/layout/BottomNavbar';
 import Popup from './components/common/Popup';
+import Vendors from './pages/Vendors';
+import VendorDetail from './pages/VendorDetail';
+import About from './pages/About';
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
             <Route path="/categories/:slug" element={<CategoryDetail />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/vendors" element={<Vendors />} />
+            <Route path="/vendors/:id" element={<VendorDetail />} />
+            <Route path="/about" element={<About />} />
           </Routes>
           <BottomNavbar />
         </BrowserRouter>

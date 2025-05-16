@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart, FiHeart } from 'react-icons/fi';
 import { useCart } from '../../context/CartContext';
+import vendors from '../../assets/data/vendors';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
@@ -16,11 +17,13 @@ const ProductCard = ({ product }) => {
     name,
     price,
     image,
-    vendorName,
+    vendorId,
     category,
     discountPrice,
     rating
   } = product;
+
+  const vendor = vendors.find(v => v.id === vendorId);
 
   return (
     <div className="product-card">
@@ -45,7 +48,11 @@ const ProductCard = ({ product }) => {
         </h3>
 
         <div className="product-meta">
-          <span className="product-vendor">By {vendorName}</span>
+          {vendor && (
+            <span className="product-vendor">
+              By <Link to={`/vendors/${vendor.id}`}>{vendor.name}</Link>
+            </span>
+          )}
         </div>
 
         <div className="product-price">
