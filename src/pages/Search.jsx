@@ -59,7 +59,7 @@ const Search = () => {
         <Navbar />
         <div className="search-page">
             <div className="search-header">
-                <h1 className="section-title">Search Products</h1>
+                
                 <div className="search-bar-container">
                     <div className="search-bar">
                         <FiSearch className="search-icon" />
@@ -80,7 +80,7 @@ const Search = () => {
                             Categories 
                         </button>
                         {showCategoryPopup && (
-                            <div className="popup">
+                            <div className="Popup">
                                 <div className="closePopup">
                                     <button onClick={() => setShowCategoryPopup (!showCategoryPopup)}>
                                     <FiX size={18} />
@@ -102,7 +102,7 @@ const Search = () => {
                             <FiFilter />Sort
                         </button>
                         {showSortPopup && (
-                            <div className="popup">
+                            <div className="Popup">
                                 <div className="closePopup">
                                     <button onClick={() => setShowSortPopup (!showSortPopup)}>
                                     <FiX size={18} />

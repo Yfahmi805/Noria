@@ -1,26 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import Button from '../components/common/Button';
 import { FiArrowLeft, FiShoppingCart, FiHeart } from 'react-icons/fi';
-import products from '../assets/data/products';
 import { useCart } from '../context/CartContext';
+import { supabase } from '../supabaseClient';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState('');
   const [mainImage, setMainImage] = useState(0);
+  const [loading, setLoading] = useState(true);
   const { addToCart } = useCart();
 
-  // Find the product with the matching ID
-  const product = products.find(p => p.id === parseInt(id));
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setLoading(true);
+      const { data, error } = await supabase.from('products').select('*').eq('id', id).single();
+      if (!error) setProduct(data);
+      setLoading(false);
+    };
+    fetchProduct();
+  }, [id]);
 
+  if (loading) return (
+    <div className="loading-spinner">
+      <span className="spinner"></span>
+      <span className="loading-text">Loading product...</span>
+    </div>
+  );
   if (!product) {
     return (
-      <div>
+      <>
         <Navbar />
         <main className="container section">
           <h2>Product not found</h2>
@@ -29,13 +44,12 @@ const ProductDetail = () => {
           </Link>
         </main>
         <Footer />
-      </div>
+      </>
     );
   }
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
-    
   };
 
   const handleQuantityChange = (amount) => {
@@ -48,7 +62,7 @@ const ProductDetail = () => {
   return (
     <div className="product-detail-page">
       <Navbar />
-      <main style={{padding:'0 10px'}}>
+      <main style={{ padding: '0 10px' }}>
         <div className="container section">
           <div className="product-navigation">
             <Link to="/products" className="back-link">

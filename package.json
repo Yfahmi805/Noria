@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Yfahmi805.github.io/Noria",   
+  "homepage": "https://Yfahmi805.github.io/Noria",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,9 +12,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/vite": "^4.1.5",
+    "i18next": "^25.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.5.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.5.3",
     "tailwindcss": "^4.1.5"

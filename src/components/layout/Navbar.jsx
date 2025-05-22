@@ -16,14 +16,17 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <div className="navbar-content">
-             {/* Logo */}
-          <Link to="/" className="navbar-logo">
-            <img src={logoImg} alt="Souk El Naturel" />
-          </Link>
-          {/* Mobile menu toggle */}
-          <button className="navbar-toggle hide-desktop" onClick={toggleMenu}>
-            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
+          
+              {/* Mobile menu toggle */}
+            <button className="navbar-toggle hide-desktop" onClick={toggleMenu}>
+              {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+            {/* Logo */}
+            <Link to="/" className="navbar-logo">
+              <img src={logoImg} alt="Noria" />
+            </Link>
+         
+
 
 
           {/* Navigation links */}

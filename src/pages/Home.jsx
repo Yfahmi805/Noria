@@ -7,7 +7,7 @@ import CategoryGrid from '../components/home/CategoryGrid';
 
 const Home = () => {
   return (
-    <div className="home-page" style={{ paddingBottom:' var(--spacing-lg)'}}>
+    <div className="home-page" >
       <Navbar />
       <main >
         <Hero />

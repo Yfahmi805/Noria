@@ -72,7 +72,7 @@
     background-color: #4b5a4d;
 }
 
-.popup {
+.Popup {
     position: absolute;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -82,13 +82,13 @@
     z-index: 10;
 }
 
-.closePopup {
+.Popup .closePopup {
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
-.closePopup button {
+.Popup .closePopup button {
     padding: 5px 10px;
     cursor: pointer;
 
@@ -97,19 +97,19 @@
     outline: none;
 }
 
-.popup ul {
+.Popup ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.popup li {
+.Popup li {
     padding: 5px 10px;
     cursor: pointer;
     font-size: 14px;
 }
 
-.popup li:hover {
+.Popup li:hover {
     background-color: #f0f0f0;
 }
 

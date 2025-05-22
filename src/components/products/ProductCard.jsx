@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart, FiHeart } from 'react-icons/fi';
 import { useCart } from '../../context/CartContext';
-import vendors from '../../assets/data/vendors';
+import { supabase } from '../../supabaseClient';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+  const [vendorName, setVendorName] = useState(product.vendorName || '');
 
   const handleAddToCart = () => {
     addToCart(product);
@@ -17,13 +18,25 @@ const ProductCard = ({ product }) => {
     name,
     price,
     image,
-    vendorId,
     category,
     discountPrice,
-    rating
+    rating,
+    vendorid
   } = product;
 
-  const vendor = vendors.find(v => v.id === vendorId);
+  useEffect(() => {
+    const fetchVendor = async () => {
+      if (!vendorName && vendorid) {
+        const { data, error } = await supabase
+          .from('vendors')
+          .select('name')
+          .eq('id', vendorid)
+          .single();
+        if (!error && data) setVendorName(data.name);
+      }
+    };
+    fetchVendor();
+  }, [vendorid, vendorName]);
 
   return (
     <div className="product-card">
@@ -48,9 +61,9 @@ const ProductCard = ({ product }) => {
         </h3>
 
         <div className="product-meta">
-          {vendor && (
+          {vendorName && (
             <span className="product-vendor">
-              By <Link to={`/vendors/${vendor.id}`}>{vendor.name}</Link>
+              By {vendorName}
             </span>
           )}
         </div>

@@ -38,15 +38,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  opacity: 0;
+  padding: 0.5rem;  
   transform: translateX(10px);
   transition: opacity var(--transition-normal), transform var(--transition-normal);
 }
 
-.product-card:hover .product-actions {
-  opacity: 1;
-  transform: translateX(0);
-}
+
 
 .product-action-btn {
   display: flex;

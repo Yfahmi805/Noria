@@ -64,12 +64,12 @@ const Cart = () => {
                             +
                           </button>
                         </div>
-                      <button
+                        <button
                           className="remove-item"
                           onClick={() => removeFromCart(item.id)}
                         >
                           <FiTrash2 size={18} />
-                      </button>
+                        </button>
                       </div>
                       <div className="cart-item-subtotal">
                         ${(item.price * item.quantity).toFixed(2)}
@@ -93,13 +93,14 @@ const Cart = () => {
                     <span>Total</span>
                     <span>${total.toFixed(2)}</span>
                   </div>
-                  <Button
-                    variant="primary"
-                    fullWidth={true}
-                    onClick={() => alert('Proceeding to checkout')}
-                  >
-                    Proceed to Checkout
-                  </Button>
+                  <Link to="/checkout">
+                    <Button
+                      variant="primary"
+                      fullWidth={true}
+                    >
+                      Proceed to Checkout
+                    </Button>
+                  </Link>
                   <Link to="/products" className="continue-shopping">
                     <FiArrowLeft size={16} />
                     <span>Continue Shopping</span>

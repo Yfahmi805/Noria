@@ -15,6 +15,10 @@ import Popup from './components/common/Popup';
 import Vendors from './pages/Vendors';
 import VendorDetail from './pages/VendorDetail';
 import About from './pages/About';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Profile from './pages/Profile';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
@@ -28,14 +32,18 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/categories/:slug" element={<CategoryDetail />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/search" element={<Search />} />
             <Route path="/vendors" element={<Vendors />} />
             <Route path="/vendors/:id" element={<VendorDetail />} />
             <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
-          <BottomNavbar />
+         
         </BrowserRouter>
       </div>
     </CartProvider>

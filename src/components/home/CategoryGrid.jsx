@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './CategoryGrid.css'
-import categories from '../../assets/data/categories'; // Adjust the path as necessary
-
+import { supabase } from '../../supabaseClient';
 
 const CategoryGrid = () => {
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      setLoading(true);
+      const { data, error } = await supabase.from('categories').select('*');
+      if (!error) setCategories(data || []);
+      setLoading(false);
+    };
+    fetchCategories();
+  }, []);
+
+  if (loading) return (
+    <div className="loading-spinner">
+      <span className="spinner"></span>
+      <span className="loading-text">Loading categories...</span>
+    </div>
+  );
+
   return (
     <section className="category-section section">
       <div className="container">
@@ -22,7 +41,7 @@ const CategoryGrid = () => {
               </div>
               <div className="category-overlay">
                 <h3 className="category-name">{category.name}</h3>
-                <p className="category-count">{category.count} Products</p>
+               
               </div>
             </Link>
           ))}
